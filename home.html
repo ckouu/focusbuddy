@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>FocusBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+    <div class="stats-bar">
+
+        <span class="stat">
+            LVL: <text id="level">0</text>
+        </span>
+
+        <span class="stat">
+            COINS: <text id="coins">0</text>
+        </span>
+    </div>
+
+    <div class="sidebar">
+        <button class="activity study" onclick="openPop('study')">
+            <img src="images/study.png" alt="study">
+        </button>
+        <button class="activity shop" onclick="openPop('shop')">
+            <img src="images/shop.png" alt="shop">
+        </button>
+        <button class="activity fridge" onclick="openPop('fridge')">
+            <img src="images/fridge.png" alt="fridge">
+        </button>
+    </div>
+
+    <div class="environment">
+
+        <div class="popup" id="study">
+
+            STUDY
+            <button class="exit" onclick="closePop('study')"> x </button>
+            <div class="popup-content">
+                <text class="timer" id="timer">30:00</text>
+                <div class="horiz-buttons">
+                    <button class="arrow-button" onclick="addTime(10)">+</button>
+                    <button class="arrow-button" onclick="addTime(-10)">-</button>
+                </div>
+                <div class="horiz-buttons">
+                    <button class="popup-button" onclick="startTimer()">START</button>
+                    <button class="popup-button" onclick="resetTimer()">RESET</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="popup" id="shop">
+
+            SHOP
+            <button class="exit" onclick="closePop('shop')"> x </button>
+            <div class="popup-content">
+                <button class="food" id="apple" onclick="selectFood(this.id)">
+                    <img src = "images/apple.png" alt="apple">
+                    (10 c)
+                </button>
+                <button class="food" id="cheese" onclick="selectFood(this.id)">
+                    <img src = "images/cheese.png" alt="cheese">
+                    (15 c)
+                </button>
+                <button class="food" id="chicken" onclick="selectFood(this.id)">
+                    <img src = "images/chicken.png" alt="chicken">
+                    (20 c)
+                </button>
+                <button class="popup-button" onclick="buyFood()">BUY</button>
+            </div>
+        </div>
+
+        <div class="popup" id="fridge">
+
+            FRIDGE
+            <button class="exit" onclick="closePop('fridge')"> x </button>
+            <div class="popup-content">
+                <button class="food empty" id="apple-fri" onclick="selectFood(this.id)">
+                    <img src = "images/apple.png" alt="apple">
+                    (<text id="apple-num">0</text>)
+                </button>
+                <button class="food empty" id="cheese-fri" onclick="selectFood(this.id)">
+                    <img src = "images/cheese.png" alt="cheese">
+                    (<text id="cheese-num">0</text>)
+                </button>
+                <button class="food empty" id="chicken-fri" onclick="selectFood(this.id)">
+                    <img src = "images/chicken.png" alt="chicken">
+                    (<text id="chicken-num">0</text>)
+                </button>
+                <button class="popup-button" onclick="giveFood()">GIVE</button>
+            </div>
+        </div>
+
+       <button onclick="pet()">
+            <img class="creature0" id="creature" onmouseover="hover('over')" onmouseout="hover('out')" src="images/creature0.png" alt="creature">
+       </button>
+    </div>
+
+</body>
+
+</html>

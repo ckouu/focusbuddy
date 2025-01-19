@@ -1,0 +1,140 @@
+body {
+    font-family: Calibri, serif;
+}
+
+div {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.stats-bar {
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100px;
+    background-color: lightblue;
+    justify-content: right;
+}
+
+.stat {
+    margin-right: 50px;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 20px;
+    border: 2px solid grey;
+}
+
+.sidebar {
+    background-color: lightyellow;
+    left: 0;
+    top: 100px;
+    bottom: 0;
+    width: 225px;
+    flex-direction: column;
+}
+
+.activity {
+    margin: 25px;
+}
+
+.study:hover {
+    content: url(images/studyhover.png);
+}
+
+.shop:hover {
+    content: url(images/shophover.png);
+}
+
+.fridge:hover {
+    content: url(images/fridgehover.png);
+}
+
+.environment {
+    right: 0;
+    left: 225px;
+    top: 100px;
+    bottom: 0;
+    background-color: floralwhite;
+}
+
+.exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: lightgray;
+    width: 30px;
+    height: 30px;
+}
+
+.popup {
+    visibility: hidden;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 5px;
+    top: 100px;
+    left: 225px;
+    width: 300px;
+    height: 500px;
+    margin: 15px;
+    padding: 15px;
+    align-items: start;
+}
+
+.popup-content {
+    position: absolute;
+    background-color: lightsteelblue;
+    top: 50px;
+    width: 300px;
+    height: 460px;
+    flex-direction: column;
+}
+
+.horiz-buttons {
+    position: static;
+
+}
+
+.popup-button {
+    background-color: lightyellow;
+    padding: 15px;
+    margin: 10px;
+}
+
+.arrow-button {
+    background-color: white;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.timer {
+    font-size: 100px;
+    color: white;
+}
+
+.food {
+    border-radius: 10px;
+    background-color: white;
+    width: 250px;
+    height: 100px;
+    border: 3px solid white;
+    margin: 10px;
+}
+
+.empty {
+    visibility: hidden;
+}
