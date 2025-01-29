@@ -108,21 +108,19 @@ let foods = new Map([
 
 function buyFood() {
   let coinsNum = parseInt(document.getElementById("coins").textContent);
-  for (let i = 0; i < foods.size; i++) {
-    let foodName = Array.from(foods.keys())[i];
+  foods.forEach((price, foodName) => {
     let food = document.getElementById(foodName);
     if (food.style.border) {
-      let coinsNeeded = foods.get(foodName);
-      if (coinsNum >= coinsNeeded) {
+      if (coinsNum >= price) {
         addToFridge(foodName);
         alert("successfully bought " + foodName);
-        addCoins(-coinsNeeded);
+        addCoins(-price);
       } else {
         alert("not enough coins! start a study session to earn coins!");
       }
       food.style.border = null;
     }
-  }
+  })
 }
 
 function addToFridge(food) {
@@ -133,19 +131,19 @@ function addToFridge(food) {
 }
 
 function giveFood() {
-  for (let i = 0; i < foods.size; i++) {
-    let foodName = Array.from(foods.keys())[i];
+  foods.forEach((price, foodName) => {
     let food = document.getElementById(foodName + "-fri");
     if (food.style.border) {
-      alert("CREATURE loved the snack! level up!");
-      addLevel(i + 1);
+      let levelsPlus = (price - 5) / 5;
+      alert("CREATURE loved the snack! plus " + levelsPlus + " levels!");
+      addLevel(levelsPlus);
       let newNum = addFoodNum(foodName, -1);
       if (newNum <= 0) {
         food.classList.add("empty");
       }
       food.style.border = null;
     }
-  }
+  })
 }
 
 function addFoodNum(id, num) {
